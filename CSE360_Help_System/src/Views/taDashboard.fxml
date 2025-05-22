@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane prefHeight="675.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TADashboardController" style="-fx-background-color: linear-gradient(to bottom, #f0f4f8, #d9e2ec);">
+   <children>
+      <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+         <!-- Header Label -->
+         <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="TA Dashboard" />
+         
+         <!-- Search Box -->
+         <HBox alignment="CENTER" spacing="10">
+            <TextField fx:id="searchField" promptText="Enter search keyword..." style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+            <Button fx:id="searchButton" onAction="#handleSearch" text="Search" style="-fx-font-size: 16px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" />
+         </HBox>
+         
+         <!-- Articles Table -->
+         <TableView fx:id="articlesTable" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: white; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;">
+            <columns>
+               <TableColumn fx:id="articleTitleColumn" prefWidth="300.0" text="Title" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+               <TableColumn fx:id="articleLevelColumn" prefWidth="100.0" text="Level" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+               <TableColumn fx:id="articleAccessColumn" prefWidth="200.0" text="Access Level" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+               <TableColumn fx:id="articleKeywordsColumn" prefWidth="200.0" text="Keywords" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+            </columns>
+         </TableView>
+         
+         <!-- Buttons -->
+         <HBox alignment="CENTER" spacing="15">
+            <Button fx:id="refreshButton" onAction="#handleRefresh" text="Refresh" style="-fx-font-size: 16px; -fx-background-color: #2ecc71; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" />
+            <Button fx:id="logoutButton" onAction="#handleLogout" text="Logout" style="-fx-font-size: 16px; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" />
+         </HBox>
+      </VBox>
+   </children>
+</StackPane>

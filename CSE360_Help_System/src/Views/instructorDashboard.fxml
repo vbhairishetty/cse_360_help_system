@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane prefHeight="675.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to bottom, #f0f4f8, #d9e2ec);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InstructorController">
+   <children>
+      <TabPane layoutX="10.0" layoutY="10.0" prefHeight="650.0" prefWidth="880.0">
+         <tabs>
+            <!-- Articles Tab -->
+            <Tab text="Articles">
+               <content>
+                  <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+                     <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Manage Articles" />
+                  
+                     <!-- Article List Table -->
+                     <TableView fx:id="articleTableView" prefHeight="300.0" prefWidth="700.0" style="-fx-background-color: white; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;">
+                        <columns>
+                           <TableColumn fx:id="articleIdColumn" prefWidth="80.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Article ID" />
+                           <TableColumn fx:id="articleTitleColumn" prefWidth="180.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Title" />
+                           <TableColumn fx:id="articleLevelColumn" prefWidth="120.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Level" />
+                           <TableColumn fx:id="articleAccessLevelColumn" prefWidth="120.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Access Level" />
+                           <TableColumn fx:id="articleKeywordsColumn" prefWidth="200.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Keywords" />
+                        </columns>
+                     </TableView>
+                  
+                     <!-- Buttons to manage articles -->
+                     <HBox alignment="CENTER" spacing="15">
+                        <Button fx:id="createArticlePageButton" onAction="#handleCreateArticlePage" style="-fx-font-size: 16px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" text="Create Article" />
+                        <Button fx:id="editArticleButton" onAction="#handleEditArticle" style="-fx-font-size: 16px; -fx-background-color: #f39c12; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" text="Edit Article" />
+                        <Button fx:id="deleteArticleButton" onAction="#handleDeleteArticle" style="-fx-font-size: 16px; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" text="Delete Article" />
+                        <Button fx:id="backupArticlesButton" onAction="#handleBackupArticles" style="-fx-font-size: 16px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" text="Backup Articles" />
+                        <Button fx:id="restoreArticlesButton" onAction="#handleRestoreArticles" style="-fx-font-size: 16px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" text="Restore Articles" />
+                     </HBox>
+                     
+                     <!-- Restore Type Selection -->
+                     <HBox alignment="CENTER" spacing="15">
+                        <Label text="Restore Type:" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                        <ChoiceBox fx:id="restoreTypeChoiceBox" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+                     </HBox>
+                     
+                     <!-- Search and Filter Options -->
+                     <HBox alignment="CENTER" spacing="15">
+                        <TextField fx:id="searchField" promptText="Enter search keyword..." style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+                        <Button fx:id="searchButton" onAction="#handleSearch" style="-fx-font-size: 16px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" text="Search" />
+                        <ChoiceBox fx:id="levelChoiceBox" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+                        <ChoiceBox fx:id="groupChoiceBox" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+                     </HBox>
+                     
+                     <!-- Logout Button -->
+                     <Button fx:id="logoutButton" onAction="#handleLogout" style="-fx-font-size: 16px; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" text="Logout" />
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Messages">
+    <content>
+        <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"
+                   text="Manage Messages" />
+            
+            <!-- Messages Table -->
+            <TableView fx:id="messagesTableView" prefHeight="300.0" prefWidth="700.0"
+                       style="-fx-background-color: white; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;">
+                <columns>
+                    <TableColumn fx:id="senderColumn" prefWidth="150.0" text="Sender" />
+                    <TableColumn fx:id="contentColumn" prefWidth="400.0" text="Message Content" />
+                    <TableColumn fx:id="timestampColumn" prefWidth="200.0" text="Timestamp" />
+                </columns>
+            </TableView>
+
+            <!-- Refresh Button -->
+            <Button fx:id="refreshMessagesButton" onAction="#handleRefreshMessages"
+                    style="-fx-font-size: 16px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;"
+                    text="Refresh Messages" />
+        </VBox>
+    </content>
+</Tab>
+            
+         </tabs>
+      </TabPane>
+   </children>
+</StackPane>

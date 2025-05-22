@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: ;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="TOP_CENTER" layoutX="48.0" layoutY="25.0" text="Finish setting up your account" textFill="#020408c4">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="email" layoutX="198.0" layoutY="123.0" promptText="Email ID">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="firstName" layoutX="198.0" layoutY="161.0" promptText="First Name">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="middleName" layoutX="198.0" layoutY="196.0" promptText="Middle Name (optional)">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="lastName" layoutX="198.0" layoutY="232.0" promptText="Last Name">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="prefName" layoutX="198.0" layoutY="267.0" promptText="Preferred Name (optional)">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="userName" layoutX="198.0" layoutY="91.0" promptText="UserName">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="nextPage" layoutX="477.0" layoutY="329.0" mnemonicParsing="false" onAction="#logout" text="Next" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="close" layoutX="73.0" layoutY="329.0" mnemonicParsing="false" onAction="#closeApp" text="Cancel">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

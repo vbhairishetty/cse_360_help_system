@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #f0f4f8, #d9e2ec);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CreateArticleController">
+    <children>
+        <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+
+            <!-- Header Label -->
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Create New Article">
+                <font>
+                    <Font size="20.0" />
+                </font>
+            </Label>
+
+            <!-- Header Input -->
+            <TextField fx:id="header" prefHeight="35.0" prefWidth="650.0" promptText="Header" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+
+            <!-- Title Input -->
+            <TextField fx:id="title" prefHeight="35.0" prefWidth="650.0" promptText="Title" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+
+            <!-- Short Description Input -->
+            <TextArea fx:id="shortDesc" prefHeight="80.0" prefWidth="650.0" promptText="Short Description" style="-fx-font-size: 16px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #95a5a6; -fx-border-width: 1;" wrapText="true" />
+
+            <!-- Keywords Input -->
+            <TextField fx:id="keywords" prefHeight="35.0" prefWidth="650.0" promptText="Keywords (comma separated)" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+
+            <!-- Article Body Input -->
+            <TextArea fx:id="body" prefHeight="150.0" prefWidth="650.0" promptText="Article Body" style="-fx-font-size: 16px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #95a5a6; -fx-border-width: 1;" wrapText="true" />
+
+            <!-- Links Input -->
+            <TextField fx:id="links" prefHeight="35.0" prefWidth="650.0" promptText="Links (comma separated)" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+
+            <!-- Sensitive Title and Description -->
+            <TextField fx:id="sensitiveTitle" prefHeight="35.0" prefWidth="650.0" promptText="Sensitive Title" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+            <TextField fx:id="sensitiveDesc" prefHeight="35.0" prefWidth="650.0" promptText="Sensitive Description" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+         <HBox>
+            <children>
+               <HBox alignment="CENTER_LEFT" style="-fx-padding: 5px;">
+                  <children>
+                     <Label contentDisplay="CENTER" style="-fx-padding: 5px;" text="Access Level" />
+                     <ChoiceBox fx:id="accessLevelChoiceBox" prefWidth="200.0" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER_LEFT" style="-fx-padding: 5px;">
+                  <children>
+                     <Label contentDisplay="CENTER" style="-fx-padding: 5px;" text="Article Level" />
+            
+                        <!-- Level Input -->
+                        <ChoiceBox fx:id="articleLevelChoiceBox" prefWidth="200.0" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+                  </children>
+               </HBox>
+            </children>
+         </HBox>
+
+            <!-- Group Selection -->
+            <Label style="-fx-font-size: 18px;" text="Groups" />
+            <HBox spacing="10">
+                <TextField fx:id="newGroup" promptText="New Group (optional)" style="-fx-font-size: 16px;" />
+                <ChoiceBox fx:id="existingGroups" prefWidth="200.0" style="-fx-font-size: 16px;" />
+            </HBox>
+
+            <!-- Role-Based Visibility -->
+            <Label style="-fx-font-size: 18px;" text="Visibility Access:" />
+            <HBox spacing="10">
+            <CheckBox fx:id="adminAccessCheckBox" text="Admins" />
+            <CheckBox fx:id="instructorAccessCheckBox" text="Instructors" />
+            <CheckBox fx:id="studentAccessCheckBox" text="Students" />
+            <CheckBox fx:id="specialAccessCheckBox" text="Special Access Group" />
+            </HBox>
+
+            <!-- Buttons -->
+            <HBox alignment="CENTER" spacing="15">
+                <Button fx:id="backBtn" onAction="#handleBackToDashboard" style="-fx-font-size: 16px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 10px;" text="Back to Dashboard" />
+                <Button fx:id="createBtn" onAction="#handleCreateArticle" style="-fx-font-size: 16px; -fx-background-color: #2ecc71; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 10px;" text="Create Article" />
+            </HBox>
+        </VBox>
+    </children>
+</StackPane>

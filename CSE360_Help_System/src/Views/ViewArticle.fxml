@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: #f9f9f9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ViewArticleController">
+    <children>
+        <!-- Main VBox to center content -->
+        <VBox alignment="CENTER" spacing="20.0" style="-fx-padding: 20;">
+            <!-- ScrollPane to make the content scrollable -->
+            <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background: transparent;" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER">
+                <content>
+                    <!-- VBox for all article content inside ScrollPane -->
+                    <VBox alignment="TOP_LEFT" spacing="20.0" style="-fx-padding: 20;" prefWidth="580.0">
+                        
+                        <!-- Title Label -->
+                        <Label fx:id="articleTitle" text="Article Title"
+                               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+                        <!-- Short Description Section Header -->
+                        <Label text="Short Description:"
+                               style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+                        <!-- Short Description -->
+                        <Label fx:id="shortDescription" text="Short Description"
+                               style="-fx-font-size: 16px; -fx-text-fill: #4a4a4a;" />
+
+                        <!-- Article Body Section Header -->
+                        <Label text="Article Body:"
+                               style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+                        <!-- Article Body -->
+                        <Label fx:id="articleBody" text="Article Body" wrapText="true"
+                               style="-fx-font-size: 18px; -fx-text-fill: #333333; -fx-line-spacing: 5px;" />
+
+                        <!-- Keywords Section Header -->
+                        <Label text="Keywords:"
+                               style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+                        <!-- Keywords -->
+                        <Label fx:id="keywords" text="Keywords"
+                               style="-fx-font-size: 14px; -fx-font-style: italic; -fx-text-fill: #6a6a6a;" />
+                        
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+            <!-- Close Button -->
+            <Button onAction="#handleClose" text="Close"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 10;" />
+        </VBox>
+    </children>
+</StackPane>

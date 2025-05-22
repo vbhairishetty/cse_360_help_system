@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #f0f4f8, #d9e2ec);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.validateOtp">
+   <children>
+      <TextField fx:id="otpField" layoutX="200.0" layoutY="199.0" promptText="OTP" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+      <Button fx:id="submitBtn" layoutX="265.0" layoutY="267.0" mnemonicParsing="false" onAction="#submitOtp" style="-fx-font-size: 16px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" text="Submit" />
+      <Label layoutX="222.0" layoutY="52.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Enter your OTP" textAlignment="CENTER" />
+      <TextField fx:id="usernameField" layoutX="200.0" layoutY="126.0" promptText="Username" style="-fx-font-size: 16px; -fx-padding: 10px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #95a5a6; -fx-border-width: 1;" />
+      <Label fx:id="otpLabel" layoutX="212.0" layoutY="252.0" style="-fx-font-size: 12px;" textFill="#e74c3c" />
+      <Hyperlink fx:id="cancelLink" layoutX="274.0" layoutY="316.0" onAction="#handleCancel" style="-fx-font-size: 14px; -fx-text-fill: #2980b9;" text="Cancel" />
+      <Label layoutX="200.0" layoutY="103.0" text="Username: ">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="200.0" layoutY="181.0" text="OTP">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

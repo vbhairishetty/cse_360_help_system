@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SelectRole" style="-fx-background-color: linear-gradient(to bottom, #f0f4f8, #d9e2ec);">
+   <children>
+      <Label layoutX="198.0" layoutY="69.0" text="Welcome User" textAlignment="CENTER" fx:id="welcomeLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+      <Button fx:id="studentButton" layoutX="125.0" layoutY="143.0" prefHeight="50.0" prefWidth="150.0" mnemonicParsing="false" onAction="#handleStudentSelection" text="Student" style="-fx-font-size: 24px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" />
+      <Button fx:id="instructorButton" layoutX="125.0" layoutY="218.0" prefHeight="50.0" prefWidth="150.0" mnemonicParsing="false" onAction="#handleInstructorSelection" text="Instructor" style="-fx-font-size: 24px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" />
+      <Button fx:id="taGraderButton" layoutX="325.0" layoutY="218.0" prefHeight="50.0" prefWidth="150.0" mnemonicParsing="false" onAction="#handleTAGraderSelection" text="TA/Grader" style="-fx-font-size: 24px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" />
+      <Button fx:id="exStudentButton" layoutX="325.0" layoutY="143.0" prefHeight="50.0" prefWidth="150.0" mnemonicParsing="false" onAction="#handleExStudentSelection" text="Ex-student" style="-fx-font-size: 24px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10px;" />
+   </children>
+</Pane>
